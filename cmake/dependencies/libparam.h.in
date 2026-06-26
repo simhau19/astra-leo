@@ -1,0 +1,15 @@
+#ifndef LIBPARAM_H
+#define LIBPARAM_H
+
+#cmakedefine PARAM_HAVE_SYS_QUEUE
+#cmakedefine PARAM_LIST_DYNAMIC
+#cmakedefine PARAM_HAVE_TIMESTAMP
+
+#define PARAM_LIST_POOL @PARAM_LIST_POOL@
+
+#cmakedefine01 PARAM_VMEM_64_BITS_API
+
+#cmakedefine MPACK_FLOAT
+#cmakedefine MPACK_STDIO
+
+#endif

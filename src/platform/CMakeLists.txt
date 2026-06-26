@@ -1,0 +1,5 @@
+if(DEFINED TARGET_CHIP)
+    add_subdirectory(${TARGET_CHIP})
+else()
+    add_subdirectory(${PLATFORM})
+endif()

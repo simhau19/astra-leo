@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gitlab.kitware.com/cmake/cmake/-/raw/master/Help/manual/presets/schema.json",
+  "version": 8,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    },
+    {
+      "name": "posix-debug",
+      "inherits": "base",
+      "displayName": "Posix Debug",
+      "description": "Target for debugging and testing on posix",
+      "binaryDir": "${sourceDir}/build/posix-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PLATFORM": "posix",
+        "FREERTOS_TRACE_STREAM_PORT": "RINGBUFFER"
+      }
+    },
+    {
+      "name": "samv71_dk-debug",
+      "inherits": "base",
+      "displayName": "SAMV71 Devkit Debug",
+      "description": "Target for debugging code on the samv71 xplained ultra development kit",
+      "binaryDir": "${sourceDir}/build/samv71_dk-debug",
+      "toolchainFile": "cmake/toolchains/arm-none-eabi.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PLATFORM": "samv71_dk"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "samv71_dk-debug",
+      "configurePreset": "samv71_dk-debug"
+    },
+    {
+      "name": "posix-debug",
+      "configurePreset": "posix-debug"
+    }
+  ]
+}

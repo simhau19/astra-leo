@@ -1,0 +1,2 @@
+set(TARGET_ARCH "posix")
+set(FREERTOS_PORT GCC_POSIX)

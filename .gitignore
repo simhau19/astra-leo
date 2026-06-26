@@ -1,0 +1,15 @@
+out/
+[Bb]uild/
+
+compile_commands.json
+CMakeUserPresets.json
+.cache/
+
+# */mcc/**/*.yml
+*/mcc_config/**/*.bak*
+*.vscode
+/mcc_config/**/*manifest*.yml
+
+*.log
+
+tracedump.bin
